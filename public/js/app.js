@@ -20791,7 +20791,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Profile = function Profile() {
   var UrlHttp = "http://127.0.0.1:8000/api";
-  var store_url = "my-public-app.myshopify.com";
+  var store_url = shopDomain;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     label: "",

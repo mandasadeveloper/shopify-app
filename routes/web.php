@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('customer');
-});
-
-
 // Route::get('/', function () {
-//     return view('welcome');
-// })->middleware(['verify.shopify'])->name('home');
+//     return view('customer');
+// });
+
+
+Route::get('/', function () {
+    return view('welcome');
+})->middleware(['verify.shopify'])->name('home');
 
 // Route :: get('get-customer/{id}',[ProfileController::class, 'index']);

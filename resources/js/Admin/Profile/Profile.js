@@ -7,7 +7,7 @@ import {
 } from '@shopify/polaris-icons'; 
 const Profile = () => { 
   let UrlHttp ="http://127.0.0.1:8000/api";
-  const store_url = "my-public-app.myshopify.com";
+  const store_url = shopDomain;
   const [state,setState]=useState({      
     label:"",
     field:"",

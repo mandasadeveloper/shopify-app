@@ -344,7 +344,7 @@ return [
     'scripttags' => [
         
             [
-                'src' => env('SHOPIFY_SCRIPTTAG_1_SRC', 'https://7036-122-175-148-11.ngrok.io/js/Script_tag.js'),
+                'src' => env('SHOPIFY_SCRIPTTAG_1_SRC', 'http://127.0.0.1:8000/js/Script_tag.js'),
                 'event' => env('SHOPIFY_SCRIPTTAG_1_EVENT', 'onload'),
                 'display_scope' => env('SHOPIFY_SCRIPTTAG_1_DISPLAY_SCOPE', 'online_store')
             ],
