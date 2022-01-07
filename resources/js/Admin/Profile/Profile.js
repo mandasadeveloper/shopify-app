@@ -1,12 +1,11 @@
-import { Button, FormLayout,Page,TextField,Form, ButtonGroup,Select, Icon, DisplayText, Card, DescriptionList } from "@shopify/polaris";
+import { Button, FormLayout,Page,TextField,Form, ButtonGroup,Select, Icon, Card, DescriptionList } from "@shopify/polaris";
 import {useEffect,useState} from "react";
 import axios from "axios";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import {
   MobileCancelMajor
 } from '@shopify/polaris-icons'; 
-const Profile = () => { 
-  let UrlHttp ="http://127.0.0.1:8000/api";
+const Profile = ({url}) => { 
   const store_url = shopDomain;
   const [state,setState]=useState({      
     label:"",
@@ -32,7 +31,7 @@ setFormValues(newFormValues)
 //for add new filed and label
 const fieldDelete= async (e, id)=>{     //delete filed
 e.preventDefault();
-axios.delete(`${UrlHttp}/delete/${id}`).then(res =>{
+axios.delete(`${url}/delete/${id}`).then(res =>{
 getData();
 });
 }
@@ -44,7 +43,7 @@ field:state.field,
 label:state.label,
 store_url:store_url,
 }
-axios.post(`${UrlHttp}/field`, dataField).then(res =>{
+axios.post(`${url}/field`, dataField).then(res =>{
 if(res.data.status === 200){          
 getData();
 }
@@ -71,7 +70,7 @@ const drageElement = (e) => {
  getData();
  },[]);
 const getData =()=>{
-  axios.get(`${UrlHttp}/demo`).then(res=>{
+  axios.get(`${url}/demo`).then(res=>{
     if(res.data.status === 200){
       setfetchfield(res.data.filed);          
     }

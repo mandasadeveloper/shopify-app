@@ -1,12 +1,3 @@
-    <?php 
-      // $lara_customer_id = 5567851102371;
-      // $shop = Auth::user();
-      // // $request = $shop->api()->rest('GET',"/admin/api/customers/$lara_customer_id.json");
-      // $request = $shop->api()->rest('GET',"/admin/api/customers.json");
-      // $customers = $request['body']['customers'];      
-      // $jsonData = json_encode( $customers );
-      // print_r($jsonData);   
-    ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>

@@ -20228,7 +20228,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function LayOut() {
+function LayOut(_ref) {
+  var url = _ref.url;
   var defaultState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)({
     emailFieldValue: 'pscadda.com',
     nameFieldValue: 'Jaded Pixel'
@@ -20535,7 +20536,9 @@ function LayOut() {
         showMobileNavigation: mobileNavigationActive,
         onNavigationDismiss: toggleMobileNavigationActive,
         skipToContentTarget: skipToContentRef.current,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Routes_Routes__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Routes_Routes__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          url: url
+        })
       })
     })
   });
@@ -20789,8 +20792,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Profile = function Profile() {
-  var UrlHttp = "http://127.0.0.1:8000/api";
+var Profile = function Profile(_ref) {
+  var url = _ref.url;
   var store_url = shopDomain;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
@@ -20843,14 +20846,14 @@ var Profile = function Profile() {
 
 
   var fieldDelete = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(e, id) {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(e, id) {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               //delete filed
               e.preventDefault();
-              axios__WEBPACK_IMPORTED_MODULE_2___default()["delete"]("".concat(UrlHttp, "/delete/").concat(id)).then(function (res) {
+              axios__WEBPACK_IMPORTED_MODULE_2___default()["delete"]("".concat(url, "/delete/").concat(id)).then(function (res) {
                 getData();
               });
 
@@ -20863,7 +20866,7 @@ var Profile = function Profile() {
     }));
 
     return function fieldDelete(_x, _x2) {
-      return _ref.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
 
@@ -20877,7 +20880,7 @@ var Profile = function Profile() {
         label: state.label,
         store_url: store_url
       };
-      axios__WEBPACK_IMPORTED_MODULE_2___default().post("".concat(UrlHttp, "/field"), dataField).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post("".concat(url, "/field"), dataField).then(function (res) {
         if (res.data.status === 200) {
           getData();
         }
@@ -20920,7 +20923,7 @@ var Profile = function Profile() {
   }, []);
 
   var getData = function getData() {
-    axios__WEBPACK_IMPORTED_MODULE_2___default().get("".concat(UrlHttp, "/demo")).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().get("".concat(url, "/demo")).then(function (res) {
       if (res.data.status === 200) {
         setfetchfield(res.data.filed);
       }
@@ -21104,7 +21107,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var FrameExample = function FrameExample() {
+var FrameExample = function FrameExample(_ref) {
+  var url = _ref.url;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router__WEBPACK_IMPORTED_MODULE_8__.Switch, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router__WEBPACK_IMPORTED_MODULE_8__.Route, {
       exact: true,
@@ -21121,11 +21125,15 @@ var FrameExample = function FrameExample() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router__WEBPACK_IMPORTED_MODULE_8__.Route, {
       exact: true,
       path: "/translations",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Setting_Admin_setting__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Setting_Admin_setting__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        url: url
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router__WEBPACK_IMPORTED_MODULE_8__.Route, {
       exact: true,
       path: "/profile",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Profile_Profile__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Profile_Profile__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        url: url
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router__WEBPACK_IMPORTED_MODULE_8__.Route, {
       exact: true,
       path: "/setting",
@@ -21161,10 +21169,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Admin_setting = function Admin_setting() {
+var Admin_setting = function Admin_setting(_ref) {
+  var url = _ref.url;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Page, {
     title: "Translations",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Left_sidebar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Right_side__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Left_sidebar__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      url: url
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Right_side__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      url: url
+    })]
   });
 };
 
@@ -21183,21 +21196,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Form/Form.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/TextField/TextField.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Button/Button.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/FormLayout/FormLayout.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Card/Card.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Card/Card.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Button/Button.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -21216,50 +21222,59 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var LeftSidebar = function LeftSidebar() {
-  var check = 1;
-  var abc;
+var LeftSidebar = function LeftSidebar(_ref) {
+  var url = _ref.url;
   var store_url = shopDomain;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    profile: "",
-    address: "",
-    gift: "",
-    coupons: ""
-  }),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
-      state = _useState2[0],
-      setState = _useState2[1];
+      profile = _useState2[0],
+      setProfile = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
-      fetchField = _useState4[0],
-      setFetchField = _useState4[1]; // data access in webpage
+      address = _useState4[0],
+      setAddress = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      gift = _useState6[0],
+      setGift = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      coupons = _useState8[0],
+      setCoupons = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState10 = _slicedToArray(_useState9, 2),
+      fetchField = _useState10[0],
+      setFetchField = _useState10[1]; // data access in webpage
 
 
-  var UrlHttp = "http://127.0.0.1:8000/api";
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     getData();
   }, []);
 
   var getData = function getData() {
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get("".concat(UrlHttp, "/sidebar")).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get("".concat(url, "/sidebar")).then(function (res) {
       if (res.data.status === 200) {
-        setFetchField(res.data.data);
+        for (var index = 0; index < res.data.data.length; index++) {
+          if (res.data.data[index].store_url == store_url) {
+            setFetchField(res.data.data[index]);
+          }
+        }
       }
     });
   };
 
-  var handleChange = function handleChange(name, value) {
-    setState(function (preValue) {
-      return _objectSpread(_objectSpread({}, preValue), {}, _defineProperty({}, name, value));
-    });
-  };
-
   var Post = function Post(path, id, data) {
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post("".concat(UrlHttp, "/").concat(path, "-update/").concat(id), data).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post("".concat(url, "/").concat(path, "-update/").concat(id), data).then(function (res) {
       if (res.data.status === 200) {
-        setState("");
+        setProfile("");
+        setAddress("");
+        setGift("");
+        setCoupons("");
         getData();
       }
     });
@@ -21270,7 +21285,7 @@ var LeftSidebar = function LeftSidebar() {
     //profile update
     e.preventDefault();
     var data = {
-      profile: state.profile
+      profile: profile
     };
     Post("profile", id, data);
   };
@@ -21279,7 +21294,7 @@ var LeftSidebar = function LeftSidebar() {
     //address update
     e.preventDefault();
     var data = {
-      address: state.address
+      address: address
     };
     Post("address", id, data);
   };
@@ -21288,7 +21303,7 @@ var LeftSidebar = function LeftSidebar() {
     //gift update
     e.preventDefault();
     var data = {
-      gift: state.gift
+      gift: gift
     };
     Post("gift", id, data);
   };
@@ -21297,7 +21312,7 @@ var LeftSidebar = function LeftSidebar() {
     //coupons update
     e.preventDefault();
     var data = {
-      coupons: state.coupons
+      coupons: coupons
     };
     Post("coupons", id, data);
   };
@@ -21305,159 +21320,99 @@ var LeftSidebar = function LeftSidebar() {
   var Insert = function Insert(e) {
     e.preventDefault();
     var data = {
-      profile: state.profile,
-      address: state.address,
-      gift: state.gift,
-      coupons: state.coupons,
+      profile: profile,
+      address: address,
+      gift: gift,
+      coupons: coupons,
       store_url: store_url
     };
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post("".concat(UrlHttp, "/insert-sidebar"), data).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post("".concat(url, "/insert-sidebar"), data).then(function (res) {
       if (res.data.status === 200) {
-        alert(res.data.message);
-        setState('');
+        setProfile("");
+        setAddress("");
+        setGift("");
+        setCoupons("");
         getData();
       }
     });
   };
 
-  var update = fetchField.map(function (item, i) {
-    if (item.store_url === store_url && item.id) {
-      abc = check + 1;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-            label: "Defaults to: the sidebar name is ".concat(item.admin_profile, "."),
-            name: "profile",
-            type: "text",
-            placeholder: "Defaults to: the sidebar name is ".concat(item.admin_profile, "."),
-            value: state.profile,
-            onChange: function onChange(value) {
-              return handleChange('profile', value);
-            },
-            connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-              submit: true,
-              onClick: function onClick(e) {
-                return profile_Update(e, item.id);
-              },
-              children: "Update"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-            label: "Defaults to: the sidebar name is ".concat(item.admin_address, "."),
-            name: "address",
-            type: "text",
-            placeholder: "Defaults to: the sidebar name is ".concat(item.admin_address, "."),
-            value: state.address,
-            onChange: function onChange(value) {
-              return handleChange('address', value);
-            },
-            connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-              submit: true,
-              onClick: function onClick(e) {
-                return address_Update(e, item.id);
-              },
-              children: "Update"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-            label: "Defaults to: the sidebar name is ".concat(item.admin_gift, "."),
-            name: "gift",
-            type: "text",
-            placeholder: "Defaults to: the sidebar name is ".concat(item.admin_gift, "."),
-            value: state.gift,
-            onChange: function onChange(value) {
-              return handleChange('gift', value);
-            },
-            connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-              submit: true,
-              onClick: function onClick(e) {
-                return gift_Update(e, item.id);
-              },
-              children: "Update"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-            label: "Defaults to: the sidebar name is ".concat(item.admin_coupons, "."),
-            name: "coupons",
-            type: "text",
-            placeholder: "Defaults to: the sidebar name is ".concat(item.admin_coupons, "."),
-            value: state.coupons,
-            onChange: function onChange(value) {
-              return handleChange('coupons', value);
-            },
-            connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-              submit: true,
-              onClick: function onClick(e) {
-                return coupons_Update(e, item.id);
-              },
-              children: "Update"
-            })
-          })
-        })]
-      }, item.id);
-    }
-  });
-
-  var insert = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.FormLayout, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-        value: store_url,
-        name: "store_url",
-        type: "hidden"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-        label: "The sidebar name is Profile Information",
-        placeholder: "Defaults to: the sidebar name is Profile Information.",
-        name: "profile",
-        type: "text",
-        value: state.profile,
-        onChange: function onChange(value) {
-          return handleChange('profile', value);
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-        label: "The sidebar name is Management Address",
-        placeholder: "Defaults to: the sidebar name is Management Address.",
-        type: "text",
-        name: "address",
-        value: state.address,
-        onChange: function onChange(value) {
-          return handleChange('address', value);
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-        label: "The sidebar name is Gift Cards",
-        placeholder: "Defaults to: the sidebar name is Gift Cards.",
-        type: "text",
-        name: "gift",
-        value: state.gift,
-        onChange: function onChange(value) {
-          return handleChange('gift', value);
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-        label: "The sidebar name is My Coupons",
-        placeholder: "Defaults to: the sidebar name is My Coupons.",
-        type: "text",
-        name: "coupons",
-        value: state.coupons,
-        onChange: function onChange(value) {
-          return handleChange('coupons', value);
-        },
-        connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-          submit: true,
-          onClick: function onClick(e) {
-            return Insert(e);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Card, {
+    title: "Left Sidebar",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Card.Section, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
+          label: "Defaults to: the sidebar name is ".concat(fetchField ? fetchField.admin_profile : "Profile Information", "."),
+          name: "profile",
+          type: "text",
+          placeholder: "Defaults to: the sidebar name is ".concat(fetchField ? fetchField.admin_profile : "Profile Information", "."),
+          value: profile,
+          onChange: function onChange(e) {
+            return setProfile(e);
           },
-          children: "Update"
+          connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+            submit: true,
+            onClick: fetchField ? function (e) {
+              return profile_Update(e, fetchField.id);
+            } : Insert,
+            children: "Update"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
+          label: "Defaults to: the sidebar name is ".concat(fetchField ? fetchField.admin_address : "Management Address", "."),
+          name: "address",
+          type: "text",
+          placeholder: "Defaults to: the sidebar name is ".concat(fetchField ? fetchField.admin_address : "Management Address", "."),
+          value: address,
+          onChange: function onChange(value) {
+            return setAddress(value);
+          },
+          connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+            submit: true,
+            onClick: fetchField ? function (e) {
+              return address_Update(e, fetchField.id);
+            } : Insert,
+            children: "Update"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
+          label: "Defaults to: the sidebar name is ".concat(fetchField ? fetchField.admin_gift : "Gift Cards", "."),
+          name: "gift",
+          type: "text",
+          placeholder: "Defaults to: the sidebar name is ".concat(fetchField ? fetchField.admin_gift : "Gift Cards", "."),
+          value: gift,
+          onChange: function onChange(value) {
+            return setGift(value);
+          },
+          connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+            submit: true,
+            onClick: fetchField ? function (e) {
+              return gift_Update(e, fetchField.id);
+            } : Insert,
+            children: "Update"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
+          label: "Defaults to: the sidebar name is ".concat(fetchField ? fetchField.admin_coupons : "My Coupons", "."),
+          name: "coupons",
+          type: "text",
+          placeholder: "Defaults to: the sidebar name is ".concat(fetchField ? fetchField.admin_coupons : "My Coupons", "."),
+          value: coupons,
+          onChange: function onChange(value) {
+            return setCoupons(value);
+          },
+          connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+            submit: true,
+            onClick: fetchField ? function (e) {
+              return coupons_Update(e, fetchField.id);
+            } : Insert,
+            children: "Update"
+          })
         })
       })]
-    })
-  });
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Card, {
-    title: "Left Sidebar",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Card.Section, {
-      children: abc == 2 ? update : insert
     })
   });
 };
@@ -21477,21 +21432,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Form/Form.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/TextField/TextField.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Button/Button.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/FormLayout/FormLayout.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Card/Card.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Card/Card.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/build/esm/components/Button/Button.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -21510,24 +21458,29 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var RightSide = function RightSide() {
-  var check = 1;
-  var abc;
+var RightSide = function RightSide(_ref) {
+  var url = _ref.url;
   var store_url = shopDomain;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    fname: "",
-    lname: "",
-    email: ""
-  }),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
-      state = _useState2[0],
-      setState = _useState2[1];
+      fname = _useState2[0],
+      setFname = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
-      fetchField = _useState4[0],
-      setFetchField = _useState4[1]; // data access in webpage
+      lname = _useState4[0],
+      setLname = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      email = _useState6[0],
+      setEmail = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      fetchField = _useState8[0],
+      setFetchField = _useState8[1]; // data access in webpage
 
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
@@ -21535,23 +21488,23 @@ var RightSide = function RightSide() {
   }, []);
 
   var getData = function getData() {
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get("".concat(UrlHttp, "/label-setting")).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get("".concat(url, "/label-setting")).then(function (res) {
       if (res.data.status === 200) {
-        setFetchField(res.data.data);
+        for (var index = 0; index < res.data.data.length; index++) {
+          if (res.data.data[index].store_url == store_url) {
+            setFetchField(res.data.data[index]);
+          }
+        }
       }
     });
   };
 
-  var handleChange = function handleChange(name, value) {
-    setState(function (preValue) {
-      return _objectSpread(_objectSpread({}, preValue), {}, _defineProperty({}, name, value));
-    });
-  };
-
   var Post = function Post(path, id, data) {
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post("".concat(UrlHttp, "/").concat(path, "-update/").concat(id), data).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post("".concat(url, "/").concat(path, "-update/").concat(id), data).then(function (res) {
       if (res.data.status === 200) {
-        setState("");
+        setFname("");
+        setLname("");
+        setEmail("");
         getData();
       }
     });
@@ -21562,7 +21515,7 @@ var RightSide = function RightSide() {
     //fname update
     e.preventDefault();
     var data = {
-      fname: state.fname
+      fname: fname
     };
     Post("fname", id, data);
   };
@@ -21571,7 +21524,7 @@ var RightSide = function RightSide() {
     //lname update
     e.preventDefault();
     var data = {
-      lname: state.lname
+      lname: lname
     };
     Post("lname", id, data);
   };
@@ -21580,7 +21533,7 @@ var RightSide = function RightSide() {
     //email update
     e.preventDefault();
     var data = {
-      email: state.email
+      email: email
     };
     Post("email", id, data);
   };
@@ -21588,126 +21541,79 @@ var RightSide = function RightSide() {
   var Insert = function Insert(e) {
     e.preventDefault();
     var data = {
-      fname: state.fname,
-      lname: state.lname,
-      email: state.email,
+      fname: fname,
+      lname: lname,
+      email: email,
       store_url: store_url
     };
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post("".concat(UrlHttp, "/insert-label"), data).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post("".concat(url, "/insert-label"), data).then(function (res) {
       if (res.data.status === 200) {
-        setState('');
+        setFname("");
+        setLname("");
+        setEmail("");
         getData();
       }
     });
   };
 
-  var update = fetchField.map(function (item, i) {
-    if (item.store_url === store_url && item.id) {
-      abc = check + 1;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-            label: "".concat(item.fname, "."),
-            name: "fname",
-            type: "text",
-            placeholder: "Defaults to:".concat(item.fname, "."),
-            value: state.fname,
-            onChange: function onChange(value) {
-              return handleChange('fname', value);
-            },
-            connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-              submit: true,
-              onClick: function onClick(e) {
-                return fname_Update(e, item.id);
-              },
-              children: "Update"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-            label: "".concat(item.lname, "."),
-            name: "lname",
-            type: "text",
-            placeholder: "Defaults to:".concat(item.lname, "."),
-            value: state.lname,
-            onChange: function onChange(value) {
-              return handleChange('lname', value);
-            },
-            connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-              submit: true,
-              onClick: function onClick(e) {
-                return lname_Update(e, item.id);
-              },
-              children: "Update"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-            label: "".concat(item.email, "."),
-            name: "email",
-            type: "text",
-            placeholder: "Defaults to:".concat(item.email, "."),
-            value: state.email,
-            onChange: function onChange(value) {
-              return handleChange('email', value);
-            },
-            connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-              submit: true,
-              onClick: function onClick(e) {
-                return email_Update(e, item.id);
-              },
-              children: "Update"
-            })
-          })
-        })]
-      }, item.id);
-    }
-  });
-
-  var insert = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.FormLayout, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-        label: "First Name",
-        placeholder: "Defaults to: First Name.",
-        type: "text",
-        name: "fname",
-        value: state.fname,
-        onChange: function onChange(value) {
-          return handleChange('fname', value);
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-        label: "Last Name",
-        placeholder: "Defaults to: Last Name.",
-        type: "text",
-        name: "lname",
-        value: state.lname,
-        onChange: function onChange(value) {
-          return handleChange('lname', value);
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-        label: "Email",
-        placeholder: "Defaults to: Email.",
-        type: "email",
-        name: "email",
-        value: state.email,
-        onChange: function onChange(value) {
-          return handleChange('email', value);
-        },
-        connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-          submit: true,
-          onClick: function onClick(e) {
-            return Insert(e);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Card, {
+    title: "Profile",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Card.Section, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
+          label: fetchField ? fetchField.fname : "First Name",
+          name: "fname",
+          type: "text",
+          placeholder: "Defaults to:".concat(fetchField ? fetchField.fname : "First Name", "."),
+          value: fname,
+          onChange: function onChange(value) {
+            return setFname(value);
           },
-          children: "Update"
+          connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+            submit: true,
+            onClick: fetchField ? function (e) {
+              return fname_Update(e, fetchField.id);
+            } : Insert,
+            children: "Update"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
+          label: fetchField ? fetchField.lname : "Last Name",
+          name: "lname",
+          type: "text",
+          placeholder: "Defaults to:".concat(fetchField ? fetchField.lname : "Last Name", "."),
+          value: lname,
+          onChange: function onChange(value) {
+            return setLname(value);
+          },
+          connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+            submit: true,
+            onClick: fetchField ? function (e) {
+              return lname_Update(e, fetchField.id);
+            } : Insert,
+            children: "Update"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
+          label: fetchField ? fetchField.email : "Email",
+          name: "email",
+          type: "text",
+          placeholder: "Defaults to:".concat(fetchField ? fetchField.email : "Email", "."),
+          value: email,
+          onChange: function onChange(value) {
+            return setEmail(value);
+          },
+          connectedRight: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+            submit: true,
+            onClick: fetchField ? function (e) {
+              return email_Update(e, fetchField.id);
+            } : Insert,
+            children: "Update"
+          })
         })
       })]
-    })
-  });
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Card, {
-    title: "Profile",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Card.Section, {
-      children: abc == 2 ? update : insert
     })
   });
 };
@@ -21805,7 +21711,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Index = function Index() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {});
+  var UrlHttp = "http://127.0.0.1:8000/api";
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    url: UrlHttp
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
@@ -76681,7 +76590,7 @@ module.exports = JSON.parse('{"surface":"#111213","onSurface":"#111213","interac
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"axios@^0.21","name":"axios","escapedName":"axios","rawSpec":"^0.21","saveSpec":null,"fetchSpec":"^0.21"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_shasum":"c67b90dc0568e5c1cf2b0b858c43ba28e2eda575","_spec":"axios@^0.21","_where":"D:\\\\laravel\\\\myapp","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundleDependencies":false,"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"deprecated":false,"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 

@@ -23,7 +23,7 @@ useState,useCallback,useRef
  } from "react";
 import FrameExample from "./Routes/Routes";
 
-export default function LayOut() {
+export default function LayOut({url}) {
     const defaultState = useRef({
       emailFieldValue: 'pscadda.com',
       nameFieldValue: 'Jaded Pixel',
@@ -303,7 +303,7 @@ export default function LayOut() {
             onNavigationDismiss={toggleMobileNavigationActive}
             skipToContentTarget={skipToContentRef.current}
           >                   
-              <FrameExample/>
+              <FrameExample url={url}/>
           </Frame>
         </AppProvider>
       </div>

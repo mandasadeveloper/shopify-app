@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 import Routing from "./Routing";
 export default function Slidebar() {  
-  const [fetchField, setFetchField]=useState([]);   // data access in webpage
-  const condition = 1;
-  var check;
+  const [fetchField, setFetchField]=useState();   // data access in webpage
   let UrlHttp ="http://127.0.0.1:8000/api";
   const url=window.location.hostname;
   useEffect(()=>{ 
@@ -14,40 +12,28 @@ export default function Slidebar() {
  const getData =()=>{
    axios.get(`${UrlHttp}/sidebar`).then(res=>{
      if(res.data.status === 200){
-       setFetchField(res.data.data);             
+      for (let index = 0; index < res.data.data.length; index++) {
+        if(res.data.data[index].store_url == url){
+          setFetchField(res.data.data[index]);  
+        }   
+       }               
      }
    });   
  }
- 
-  var display=fetchField.map((item,i)=>{    
-      if(item.store_url === url){  
-        check = condition+1     
-        return (
-          <div key={item.id}>
-            <li><Link to ="/profile">{item.admin_profile}</Link></li>        
-            <li><Link to ="/manage-address">{item.admin_address}</Link></li>        
-            <li><Link to ="/gift-cards">{item.admin_gift}</Link></li>        
-            <li><Link to ="/coupons">{item.admin_coupons}</Link></li>                         
-          </div>
-         )
-      }
-  });
+    
+    
+          
     return (
       <div className="content-container">
       <div id="left-panel" className="left-nav-wrapper">
           <ul className="navigation-panel">                   
           
-              {
-              check == 2?      
-              display       
-              :          
-              <>
-              <li><Link to ="/profile">Profile Information</Link></li>        
-              <li><Link to ="/manage-address">Manage Address</Link></li>        
-              <li><Link to ="/gift-cards">Gift Cards</Link></li>        
-              <li><Link to ="/coupons">My Coupons</Link></li> 
-              </>
-              }                             
+          <div>
+            <li><Link to ="/profile">{fetchField?fetchField.admin_profile:"Profile Information"}</Link></li>        
+            <li><Link to ="/manage-address">{fetchField?fetchField.admin_address:"Manage Address"}</Link></li>        
+            <li><Link to ="/gift-cards">{fetchField?fetchField.admin_gift:"Gift Cards"}</Link></li>        
+            <li><Link to ="/coupons">{fetchField?fetchField.admin_coupons:"My Coupons"}</Link></li>                         
+          </div>                   
           </ul>         
       </div>
       <div className="right-content-wrapper container">

@@ -6,15 +6,15 @@ import Profile from "../Profile/Profile";
 import Dashboard from "../Dashboard/Dashboard";
 import Admin_setting from "../Setting/Admin_setting";
 import Setting from "../Setting/Setting";
-const FrameExample=()=>{
+const FrameExample=({url})=>{
 return(
     <Switch>     
     <Route exact path="/"><Dashboard/></Route>
     <Route exact path="/gift"><Gift/></Route>
     <Route exact path="/manage-address"><Manage_Address/></Route>
-    <Route exact path="/translations"><Admin_setting/></Route>
-    <Route exact path="/profile"><Profile/></Route> 
-    <Route exact path="/setting"><Setting/></Route>   
+    <Route exact path="/translations"><Admin_setting url={url}/></Route>
+    <Route exact path="/profile"><Profile url={url}/></Route> 
+    <Route exact path="/setting"><Setting /></Route>   
     <Route component={Error}/>    
    </Switch>     
 )

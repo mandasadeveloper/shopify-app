@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller 
 {       
-function index($lara_customer_id){    
-  return redirect("https://my-public-app.myshopify.com/admin/customers/$lara_customer_id.json");    
-}
 
     function InsertSidebar(Request $request){  
         $profile=$request->input('profile'); 
@@ -132,7 +129,7 @@ function LabelSetting(){
         ]);       
     }
     public Function GetData(){
-        $profile = DB::table('admin_profile')->get();
+        $profile = DB::table('customer_profile')->get();
         return response()->json([
             'status'  => 200,
             'profile' => $profile,
@@ -144,15 +141,13 @@ function LabelSetting(){
         $fname=$request->input('fname');  
         if($fname == ''){$fname='';}      
         $lname=$request->input('lname');        
-        if($lname == ''){$lname='';}
-        $email=$request->input('email'); 
-        if($email == ''){$email='';}                                
+        if($lname == ''){$lname='';}                  
         $fields=$request->input('fields');         
         $input = array($fields);
         $fields= serialize($input);
         if($fields == ''){$fields='';}          
-        $all=array('shop_url'=>$shop_url,'fname'=>$fname ,'lname'=>$lname,'email'=>$email ,'fields'=>$fields);                 
-        DB::table('admin_profile')->insert($all);
+        $all=array('shop_url'=>$shop_url,'fname'=>$fname ,'lname'=>$lname ,'fields'=>$fields);                 
+        DB::table('customer_profile')->insert($all);
         return response()->json([
             'status'  => 200,
             'message' => 'Data inserted successfully',

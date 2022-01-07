@@ -1,13 +1,13 @@
 import { Page } from "@shopify/polaris";
 import LeftSidebar from "./Left_sidebar";
 import RightSide from "./Right_side";
-const Admin_setting = () => { 
+const Admin_setting = ({url}) => { 
 return (
          <Page                              
          title="Translations"      
          >
-         <LeftSidebar/>         
-         <RightSide/>       
+         <LeftSidebar url={url}/>         
+         <RightSide url={url}/>       
          </Page>
     );
 }
